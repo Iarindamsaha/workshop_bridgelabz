@@ -1,5 +1,6 @@
 package tic_tac_toe;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +15,11 @@ public class Main {
         System.out.println("-------------------------------");
         board();
         choose_letter();
+        if(toss()==1){
+            playerMove();
+            displayBoard();
+        }
+
         displayBoard();
         playerMove();
         checkFreeSpace();
@@ -72,6 +78,21 @@ public class Main {
         else{
             System.out.println("Spaces Are Available= "+remaining_space);
         }
+    }
+
+    public static int toss(){
+        Random random = new Random();
+        int check = random.nextInt(0,2);
+        int value_return;
+        if(check == 1){
+            System.out.println("Player plays First");
+            value_return=1;
+        }
+        else{
+            System.out.println("Computer Plays First");
+            value_return = 0;
+        }
+        return value_return;
     }
 
 
