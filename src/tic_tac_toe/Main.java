@@ -20,9 +20,13 @@ public class Main {
             displayBoard();
         }
 
-        displayBoard();
-        playerMove();
-        checkFreeSpace();
+        while(true){
+            playerMove();
+            displayBoard();
+            checkFreeSpace();
+            check_winner();
+        }
+
 
 
     }
@@ -52,7 +56,7 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             System.out.println("Choose Board Location From 1 to 9");
             players_move = sc.nextInt();
-            if(board[players_move]==' '){
+            if(board[players_move] == ' '){
                 break;
             }
             System.out.println("Player Move = "+players_move);
@@ -93,6 +97,21 @@ public class Main {
             value_return = 0;
         }
         return value_return;
+    }
+
+    public static void check_winner(){
+        if ((board[1] == player_input && board[2] == player_input && board[3] == player_input ||
+                board[1] == player_input && board[4] == player_input && board[7] == player_input ||
+                board[1] == player_input && board[5] == player_input && board[9] == player_input ||
+                board[3] == player_input && board[5] == player_input && board[7] == player_input ||
+                board[2] == player_input && board[5] == player_input && board[8] == player_input ||
+                board[3] == player_input && board[6] == player_input && board[9] == player_input ||
+                board[4] == player_input && board[5] == player_input && board[6] == player_input ||
+                board[7] == player_input && board[8] == player_input && board[9] == player_input
+        )){
+            System.out.println("Player Wins The Game");
+            System.exit(0);
+        }
     }
 
 
