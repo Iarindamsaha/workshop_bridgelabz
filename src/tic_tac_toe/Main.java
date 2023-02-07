@@ -15,6 +15,8 @@ public class Main {
         board();
         choose_letter();
         displayBoard();
+        playerMove();
+
 
     }
     public static void board(){
@@ -36,6 +38,21 @@ public class Main {
         System.out.println(board[4]+"||"+board[5]+"||"+board[6]);
         System.out.println("-------");
         System.out.println(board[7]+"||"+board[8]+"||"+board[9]);
+    }
+    public static void playerMove(){
+        int players_move;
+        while(true){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Choose Board Location From 1 to 9");
+            players_move = sc.nextInt();
+            if(board[players_move]==' '){
+                break;
+            }
+            System.out.println("Player Move = "+players_move);
+            board[players_move]=player_input;
+
+        }
+
     }
 
 }
