@@ -19,9 +19,14 @@ public class Main {
             playerMove();
             displayBoard();
         }
+        else{
+            computer_turn();
+            displayBoard();
+        }
 
         while(true){
             playerMove();
+            computer_turn();
             displayBoard();
             checkFreeSpace();
             check_winner();
@@ -51,18 +56,18 @@ public class Main {
         System.out.println(board[7]+"||"+board[8]+"||"+board[9]);
     }
     public static void playerMove(){
-        int players_move;
+        int players_moves;
         while(true){
             Scanner sc = new Scanner(System.in);
             System.out.println("Choose Board Location From 1 to 9");
-            players_move = sc.nextInt();
-            if(board[players_move] == ' '){
+            players_moves = sc.nextInt();
+            if(board[players_moves] == ' '){
                 break;
             }
-            System.out.println("Player Move = "+players_move);
-            board[players_move]=player_input;
 
         }
+        System.out.println("Player Move = "+players_moves);
+        board[players_moves]=player_input;
 
     }
 
@@ -111,7 +116,31 @@ public class Main {
         )){
             System.out.println("Player Wins The Game");
             System.exit(0);
+        } else if ((board[1] == computer_input && board[2] == computer_input && board[3] == computer_input ||
+                board[1] == computer_input && board[4] == computer_input && board[7] == computer_input ||
+                board[1] == computer_input && board[5] == computer_input && board[9] == computer_input ||
+                board[3] == computer_input && board[5] == computer_input && board[7] == computer_input ||
+                board[2] == computer_input && board[5] == computer_input && board[8] == computer_input ||
+                board[3] == computer_input && board[6] == computer_input && board[9] == computer_input ||
+                board[4] == computer_input && board[5] == computer_input && board[6] == computer_input ||
+                board[7] == computer_input && board[8] == computer_input && board[9] == computer_input
+        )) {
+            System.out.println("Computer Won The Game");
+            System.exit(0);
         }
+    }
+
+    public static void computer_turn(){
+        int computerMove;
+        Random random = new Random();
+        while(true){
+            computerMove= random.nextInt(9)+1;
+            if (board[computerMove]==' '){
+                break;
+            }
+        }
+        System.out.println("Computer Move: "+computerMove);
+        board[computerMove]=computer_input;
     }
 
 
