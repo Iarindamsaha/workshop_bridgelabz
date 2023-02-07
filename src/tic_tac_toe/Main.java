@@ -146,25 +146,37 @@ public class Main {
         board[computerMove]=computer_input;
     }
      public static void winnerWarning(){
-        if(     board[1] == computer_input && board[2] == computer_input && board[3] == ' ' ||
+        if(     //first row check
+
+                board[1] == computer_input && board[2] == computer_input && board[3] == ' ' ||
                 board[1] == ' ' && board[2] == computer_input && board[3] == computer_input ||
                 board[1] == computer_input && board[2] == ' ' && board[3] == computer_input ||
+
+                //first column
 
                 board[1] == computer_input && board[4] == computer_input && board[7] == ' ' ||
                 board[1] == ' ' && board[4] == computer_input && board[7] == computer_input ||
                 board[1] == computer_input && board[4] == ' ' && board[7] == computer_input ||
 
+                //second column check
+
                 board[2] == computer_input && board[5] == computer_input && board[8] == ' ' ||
                 board[2] == ' ' && board[5] == computer_input && board[8] == computer_input ||
                 board[2] == computer_input && board[5] == ' ' && board[8] == computer_input ||
+
+                //third column check
 
                 board[3] == computer_input && board[6] == computer_input && board[9] == ' ' ||
                 board[3] == ' ' && board[6] == computer_input && board[9] == computer_input ||
                 board[3] == computer_input && board[6] == ' ' && board[9] == computer_input ||
 
+                //for second row
+
                 board[4] == computer_input && board[5] == computer_input && board[6] == ' '||
                 board[4] == ' ' && board[5] == computer_input && board[6] == computer_input ||
                 board[4] == computer_input && board[5] == ' ' && board[6] == computer_input||
+
+                //for third row
 
                 board[7] == computer_input && board[8] == computer_input && board[9] == ' '||
                 board[7] == ' ' && board[8] == computer_input && board[9] == computer_input ||
