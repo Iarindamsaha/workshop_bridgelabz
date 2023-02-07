@@ -16,6 +16,7 @@ public class Main {
         choose_letter();
         displayBoard();
         playerMove();
+        checkFreeSpace();
 
 
     }
@@ -54,5 +55,25 @@ public class Main {
         }
 
     }
+
+    public static void checkFreeSpace(){
+        boolean space = false;
+        int remaining_space = 0;
+
+        for(int i = 1; i<=9; i++){
+            if(board[i]==' '){
+                space=true;
+                remaining_space++;
+            }
+        }
+        if (space==false){
+            System.out.println("No more Space Available");
+        }
+        else{
+            System.out.println("Spaces Are Available= "+remaining_space);
+        }
+    }
+
+
 
 }
