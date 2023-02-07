@@ -1,5 +1,6 @@
 package tic_tac_toe;
 
+import java.nio.file.FileSystemAlreadyExistsException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,6 +31,7 @@ public class Main {
             displayBoard();
             checkFreeSpace();
             check_winner();
+            winnerWarning();
         }
 
 
@@ -82,7 +84,8 @@ public class Main {
             }
         }
         if (space==false){
-            System.out.println("No more Space Available");
+            System.out.println("No more Space Available || The Game is a Draw");
+            System.exit(0);
         }
         else{
             System.out.println("Spaces Are Available= "+remaining_space);
@@ -142,6 +145,46 @@ public class Main {
         System.out.println("Computer Move: "+computerMove);
         board[computerMove]=computer_input;
     }
+     public static void winnerWarning(){
+        if(     board[1] == computer_input && board[2] == computer_input && board[3] == ' ' ||
+                board[1] == ' ' && board[2] == computer_input && board[3] == computer_input ||
+                board[1] == computer_input && board[2] == ' ' && board[3] == computer_input ||
+
+                board[1] == computer_input && board[4] == computer_input && board[7] == ' ' ||
+                board[1] == ' ' && board[4] == computer_input && board[7] == computer_input ||
+                board[1] == computer_input && board[4] == ' ' && board[7] == computer_input ||
+
+                board[2] == computer_input && board[5] == computer_input && board[8] == ' ' ||
+                board[2] == ' ' && board[5] == computer_input && board[8] == computer_input ||
+                board[2] == computer_input && board[5] == ' ' && board[8] == computer_input ||
+
+                board[3] == computer_input && board[6] == computer_input && board[9] == ' ' ||
+                board[3] == ' ' && board[6] == computer_input && board[9] == computer_input ||
+                board[3] == computer_input && board[6] == ' ' && board[9] == computer_input ||
+
+                board[4] == computer_input && board[5] == computer_input && board[6] == ' '||
+                board[4] == ' ' && board[5] == computer_input && board[6] == computer_input ||
+                board[4] == computer_input && board[5] == ' ' && board[6] == computer_input||
+
+                board[7] == computer_input && board[8] == computer_input && board[9] == ' '||
+                board[7] == ' ' && board[8] == computer_input && board[9] == computer_input ||
+                board[7] == computer_input && board[8] == ' ' && board[9] == computer_input ||
+
+                // for corners
+
+                board[1] == computer_input && board[5] == computer_input && board[9] == ' ' ||
+                board[1] == ' ' && board[5] == computer_input && board[9] == computer_input ||
+                board[1] == computer_input && board[5] == ' ' && board[9] == computer_input ||
+
+                board[3] == computer_input && board[5] == computer_input && board[7] == ' ' ||
+                board[3] == ' ' && board[5] == computer_input && board[7] == computer_input ||
+                board[3] == computer_input && board[5] == ' ' && board[7] == computer_input
+
+
+        ){
+            System.out.println("Computer Can Almost Win the Game Play Carefully");
+        }
+     }
 
 
 
