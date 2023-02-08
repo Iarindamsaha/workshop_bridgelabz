@@ -66,7 +66,7 @@ public class Main {
             }
 
         }
-        System.out.println("Player Move = "+players_moves);
+        System.out.println("Player Move = "+"INDEX = "+players_moves);
         board[players_moves]=player_input;
 
     }
@@ -82,7 +82,8 @@ public class Main {
             }
         }
         if (space==false){
-            System.out.println("No more Space Available");
+            System.out.println("No more Space Available || The Game is a Draw");
+            System.exit(0);
         }
         else{
             System.out.println("Spaces Are Available= "+remaining_space);
