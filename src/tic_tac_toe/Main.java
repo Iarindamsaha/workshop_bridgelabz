@@ -48,17 +48,16 @@ public class Main {
     }
     public static void playerMove(){
         int players_move;
-        while(true){
+        while(true) {
             Scanner sc = new Scanner(System.in);
             System.out.println("Choose Board Location From 1 to 9");
             players_move = sc.nextInt();
-            if(board[players_move]==' '){
+            if (board[players_move] == ' ') {
                 break;
             }
-            System.out.println("Player Move = "+players_move);
-            board[players_move]=player_input;
-
         }
+        System.out.println("Player Move = "+"INDEX = "+players_move);
+        board[players_move]=player_input;
 
     }
 
