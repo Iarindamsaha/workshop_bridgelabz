@@ -48,10 +48,10 @@ public class Main {
             if(board[players_move]==' '){
                 break;
             }
-            System.out.println("Player Move = "+players_move);
-            board[players_move]=player_input;
 
         }
+        System.out.println("Player Move = "+"INDEX = "+players_move);
+        board[players_move]=player_input;
 
     }
 
